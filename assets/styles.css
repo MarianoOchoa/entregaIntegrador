@@ -348,6 +348,7 @@ footer ul li{
     gap: 15px;
     border-radius: 1rem;
     align-items: center;
+    min-width: 400px;
 }
 .remember{
     display: flex;
@@ -373,10 +374,8 @@ footer ul li{
 
 /*Register*/
 
-
 .register{
-    min-width: 350px;
-
+    min-width: 400px;
 }
 .register__logo img{
     width: 40%;
