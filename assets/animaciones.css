@@ -1,0 +1,112 @@
+*{
+    scroll-padding-top: 80px;
+}
+
+.overlay{
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    display: none;
+    background-color: rgba(255,255,255,0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+}
+
+#toggle__menu:checked ~ .overlay{
+    display: block;
+}
+
+#toggle__menu:checked ~ .hmb__menu{
+    transform: translateY(0);
+    transition: all 1s;
+    z-index: 1;
+}
+
+.hero__img{
+    transform: translate(0);
+    transition: all 1s linear;
+}
+
+.navbar__list ul li, .register__nav ul li{
+    padding: 0;
+    position: relative;
+}
+
+.navbar__list ul li a::after, .register__nav ul li a::after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: var(--text);
+    transform: scaleX(0);   
+    transform-origin: bottom right;
+    transition: transform 0.1s ease;
+}
+.navbar__list ul li a:hover::after, .register__nav ul li a:hover::after{
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes slide-up{
+    from{
+        transform: translateY(30%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-right{
+    from{
+        transform: translatex(-40%)
+    }
+    to{
+        transform: translateX(0)
+    }
+}
+@keyframes slide-left{
+    from{ 
+        transform: translateX(10%)
+
+    }
+    to{
+        transform: translateX(0)
+    }
+}
+
+
+
+.hero__info{
+    animation: slide-right 1s ease-in, fade 1s ease-in;
+}
+.hero__img{
+    animation: fade 1s ease-in;
+}
+
+.card__container :nth-child(1){
+    animation: slide-up 1s ease-in;
+    
+}
+
+.card__container :nth-child(2){
+    animation: slide-up 1.1s ease-in;
+    
+}
+
+.card__container :nth-child(3){
+    animation: slide-up 1.2s ease-in;
+}
